@@ -46,6 +46,19 @@ Este repositório fornece uma configuração completa para implantar o Kong API 
 - Este é um exemplo básico. Adapte-o às suas necessidades e explore as opções de configuração do Kong, Konga, Docker Compose e Helm.
 - Mantenha o Kong e o Konga atualizados para garantir compatibilidade e segurança.
 - Utilize práticas de segurança adequadas, como autenticação e controle de acesso, especialmente em ambientes de produção.
+- Verifique sempre se os services kong konga e postgreSQL estao rodando com o 
+   ```bash
+   docker ps
+  ```
+- Caso apenas o konga e o PostgreSQL estiver rodando, executei um novo compose apenas no kong
+  ```bash
+  docker-compose up kong
+  ```
+- Feito esses procediementos os end-point da  API do Kong vao estar acessevies na rota:
+  ```bash
+  http://localhost:8001/
+  ```
+
 
 ## Contribuições
 
