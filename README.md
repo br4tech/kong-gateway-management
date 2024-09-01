@@ -1,4 +1,4 @@
-# Kong API Gateway com Konga - Implantação Local e em Kubernetes
+# Kong API Gateway com Konga
 
 Este repositório fornece uma configuração completa para implantar o Kong API Gateway com a interface gráfica Konga, tanto em um ambiente local de desenvolvimento usando Docker Compose quanto em um cluster Kubernetes usando Helm.
 
@@ -58,6 +58,8 @@ Este repositório fornece uma configuração completa para implantar o Kong API 
   ```bash
   http://localhost:8001/
   ```
+- Estamos utilizando nesse projeto o repo do kong que esta disponivel   `https://charts.konghq.com` sendo assim nao esta sendo gerado os arquivos dos recursos do helm
+realizamos as alteracoes nesse cenario atraves do arquivo `values.yaml`
 
 
 ## Contribuições
