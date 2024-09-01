@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_DB: kong
+      POSTGRES_PASSWORD: kong
+    volumes:
+      - db_data:/var/lib/postgresql/data 
+
+  kong:
+    image: kong:latest
+    command: "-c prepare -a postgres -u postgresql://kong@db:5432/kong-gateway-db"
+    depends_on:
+      - db
+    ports:
+      - 8000:8000 
+      - 8443:8443 
+      - 8001:8001 
+      - 1337:1337 
+    environment:
+      KONG_DATABASE: kong-gateway-db
+      KONG_PG_HOST: db
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+
+  konga:
+    image: pantsel/konga:latest
+    depends_on:
+      - kong
+    environment:
+      DB_ADAPTER: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: kong
+      DB_PASSWORD: kong
+      DB_DATABASE: kong-gateway-db
+      NODE_ENV: development
+
+volumes:
+  db_data:

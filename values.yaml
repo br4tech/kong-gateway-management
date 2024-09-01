@@ -1,0 +1,21 @@
+kong:
+  # Configurações do Kong (banco de dados, proxy, etc.)
+  admin_listen: 0.0.0.0:8001
+  proxy_listen: 0.0.0.0:8000
+
+konga:
+  enabled: true
+  image:
+    repository: pantsel/konga
+    tag: latest
+  admin_listen: 0.0.0.0:1337
+
+  # Configurações do banco de dados do Konga
+  postgresql:
+    enabled: true
+    image:
+      repository: postgres
+      tag: latest
+    persistence:
+      enabled: false # Ajuste para true se quiser persistir dados em produção
+
