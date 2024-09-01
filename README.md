@@ -29,7 +29,7 @@ Este repositório fornece uma configuração completa para implantar o Kong API 
     ```bash
     helm repo update
     ```
-5. Instale o Kong
+5. Instale o Kong:
   ```bash
   helm install kong-gateway-management kong/kong --values values.yaml
   ``
