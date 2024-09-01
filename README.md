@@ -32,7 +32,7 @@ Este repositório fornece uma configuração completa para implantar o Kong API 
 5. Instale o Kong:
   ```bash
   helm install kong-gateway-management kong/kong --values values.yaml
-  ``
+  ```
 6. Acesse o Konga e o Kong Admin API através dos serviços expostos no seu cluster.
 
 ## Configurações
