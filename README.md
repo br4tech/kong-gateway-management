@@ -11,23 +11,28 @@ Este repositório fornece uma configuração completa para implantar o Kong API 
 ## Como Usar
 
 ### Localmente (Docker Compose)
+
 1. Certifique-se de ter o Docker e o Docker Compose instalados.
 2. Clone este repositório.
 3. Na raiz do projeto, execute `docker-compose up -d`.
 4. Acesse o Konga em [http://localhost:1337](http://localhost:1337) e o Kong Admin API em [http://localhost:8001](http://localhost:8001).
 
 ### Em Kubernetes (Helm)
+
 1. Certifique-se de ter o Helm instalado e configurado para acessar seu cluster Kubernetes.
 2. Clone este repositório.
 3. Adicione o repositório do Kong ao Helm:  
    ```bash
    helm repo add kong https://charts.konghq.com
+   ```
 4. Atualize os repositórios:
     ```bash
     helm repo update
+    ```
 5. Instale o Kong
   ```bash
   helm install kong-gateway-management kong/kong --values values.yaml
+  ``
 6. Acesse o Konga e o Kong Admin API através dos serviços expostos no seu cluster.
 
 ## Configurações
