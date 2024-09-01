@@ -30,9 +30,9 @@ Este repositório fornece uma configuração completa para implantar o Kong API 
     helm repo update
     ```
 5. Instale o Kong:
-  ```bash
-  helm install kong-gateway-management kong/kong --values values.yaml
-  ```
+    ```bash
+    helm install kong-gateway-management kong/kong --values values.yaml
+    ```
 6. Acesse o Konga e o Kong Admin API através dos serviços expostos no seu cluster.
 
 ## Configurações
@@ -47,17 +47,17 @@ Este repositório fornece uma configuração completa para implantar o Kong API 
 - Mantenha o Kong e o Konga atualizados para garantir compatibilidade e segurança.
 - Utilize práticas de segurança adequadas, como autenticação e controle de acesso, especialmente em ambientes de produção.
 - Verifique sempre se os services kong konga e postgreSQL estao rodando com o 
-   ```bash
-   docker ps
-  ```
+    ```bash
+    docker ps
+    ```
 - Caso apenas o konga e o PostgreSQL estiver rodando, executei um novo compose apenas no kong
-  ```bash
-  docker-compose up kong
-  ```
+    ```bash
+    docker-compose up kong
+    ```
 - Feito esses procediementos os end-point da  API do Kong vao estar acessevies na rota:
-  ```bash
-  http://localhost:8001/
-  ```
+    ```bash
+    http://localhost:8001/
+    ```
 - Estamos utilizando nesse projeto o repo do kong que esta disponivel   `https://charts.konghq.com` sendo assim nao esta sendo gerado os arquivos dos recursos do helm
 realizamos as alteracoes nesse cenario atraves do arquivo `values.yaml`
 
